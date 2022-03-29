@@ -39,7 +39,8 @@
                 }else/*다음순서*/{
                     $order.textContent = order +1;
                 }
-                
+                $input.value = '';
+                $input.focus(); // 입력창을 하이라이트
             }else{
                     alert('올바르지 않은 단어입니다!');
                 }
@@ -51,18 +52,20 @@
             new_word = event.target.value;
         };
 
+        $button.addEventListener('click', onClickButton);
+        $input.addEventListener('input',onInput);
 
 
-
-        document.querySelector('input').addEventListener('input', (event) => {
-            console.log('글자입력',event.target.value);
-        });
-        document.querySelector('button').addEventListener('click',function(){
+       // document.querySelector('input').addEventListener('input', (event) => {
+       //     console.log('글자입력',event.target.value);
+       // });
+       // document.querySelector('button').addEventListener('click',function(){
             console.log('버튼 클릭');
-        });
+       // });
         //document.querySelector('#order'); 
         //span tag를 사용하고싶을때 span만 쳐버리게 되어버리면 맨 앞에 선언한 문장만이 되어지지만
         //#을 치고 id를 쳐주면 원하는 것을 선택할 수 있음
+
     </script>
 </body>
 </html>
